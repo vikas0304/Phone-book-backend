@@ -9,6 +9,8 @@ app.use(express.json());
 
 app.use(morgan('tiny'));
 
+app.use(express.static('dist'))
+
 let persons = [
     { 
       "id": "1",
@@ -133,7 +135,7 @@ const unknownEndpoint = (request, response) => {
 app.use(unknownEndpoint)
 
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, ()=>{
     console.log(`Server is running on port http://localhost:${PORT}`);
 })
